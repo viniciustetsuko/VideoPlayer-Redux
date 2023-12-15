@@ -1,30 +1,28 @@
-# React + TypeScript + Vite
+# Objetivo do Projeto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Demo Projeto](demo/Projeto.gif)
 
-Currently, two official plugins are available:
+Este projeto foi feito com base nas aulas da Rocketseat.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O objetivo foi desenvolver um player de aulas parecido com o que a Rocketseat usa em suas aulas. Obtemos os módulos e suas aulas de uma API mockada com ajuda do json-server, e guardamos os dados dentro do Redux, para renderizarmos na tela.
+Com a ajuda do Redux, é possível fazer com que a próxima aula seja reproduzida automaticamente após o término da anterior, e caso o módulo inteiro seja concluido, é passado para o próximo automaticamente.
 
-## Expanding the ESLint configuration
+Também com a ajuda do Vitest, foram criados testes unitários para validar a funcionalidade do video player: se ele conseguiu reproduzir o próximo vídeo, ou trocar para o próximo módulo automaticamente, por exemplo.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Como iniciar o projeto
 
-- Configure the top-level `parserOptions` property like this:
+Após clonar o projeto, precisamos usar o seguinte comando para instalar as dependências do projeto: 
 
 ```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+   npm i
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Em seguida, precisamos executar tanto o projeto React, quanto a API mockada. Para isso, execute os seguintes comandos em dois powershells diferentes:
+
+```js
+   npm run dev
+```
+
+```js
+   npm run server
+```
